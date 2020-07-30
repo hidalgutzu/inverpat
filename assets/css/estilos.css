@@ -1,0 +1,57 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     color: white;
+     background: black;
+     font-size: 16px;
+     height: 100%;
+}
+
+:root {
+     --dedalo: #D2C29D;
+     --gris: #7C7C7C;
+     --gris_claro: #c3c3c3;
+     --negro50: rgba(0,0,0,0.5);
+     --negro60: rgba(0,0,0,0.6);
+     --negro70: rgba(0,0,0,0.7);
+     --blanco50: rgba(255,255,255,0.5);
+     --blanco60: rgba(255,255,255,0.6);
+     --blanco70: rgba(255,255,255,0.7);
+     --trans: all 0.2s ease-in-out;
+}
+
+::selection {
+     background: var(--dedalo);
+     color: black;
+}
+::-moz-selection {
+     background: var(--dedalo);
+     color: black;
+}
+
+.ocultar {display: none;}
+
+ul {
+     list-style: none;
+}
+
+button, input, select, textarea {
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+     margin: 0;
+}
+
+#temporal {
+    height: 100vh;
+    width: 100vw;
+    background: url('../images/temporal.jpg')no-repeat center center;
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
