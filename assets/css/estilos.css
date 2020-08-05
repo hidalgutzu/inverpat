@@ -82,7 +82,8 @@ nav {
       background-color: var(--negro50);
       display: flex;
       justify-content: space-between;
-      padding: 20px 0;
+      align-items: center;
+      padding: 10px 0;
       position: fixed; 
       z-index: 999;
  }
