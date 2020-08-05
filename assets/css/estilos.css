@@ -190,7 +190,10 @@ button, input, select, textarea {
  #index-servicios .item {
       position: relative;
       background-color: black;
-
+      display: grid;
+      justify-content: center;
+      align-content: center;
+     text-align: center;
  }
  #index-servicios .item::before {
       position: absolute;
@@ -214,6 +217,10 @@ button, input, select, textarea {
  #index-servicios .item:nth-child(3)::before {
      background: url('../images/servicio3-bkgr.jpg')no-repeat center center;
      background-size: cover;
+ }
+ #index-servicios .item h2, #index-servicios .item p {
+      position: relative;
+      color: white;
  }
 
  /* INDEX:: index-about-us */
