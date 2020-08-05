@@ -54,15 +54,34 @@ body {
 }
 
 p {
-      line-height: 1.4em;
-      letter-spacing: 0.6px;
+     font-family: 'Mulish', sans-serif;
+     font-weight: 300;
+     line-height: 1.4em;
+     letter-spacing: 0.4px;
+     font-size: 0.9em;
+     line-height: 1.6em;
  }
  
  ul {
-      margin: 0;
- padding: 0;
- list-style: none;
+      margin: 20px 0;
+     padding: 0;
+     list-style: none;
  }
+ ul li {
+      position: relative;
+     font-family: 'Mulish', sans-serif;
+     line-height: 1.8em;
+     padding-left: 30px;
+}
+ul li::before {
+     border-bottom: 1px solid white;
+     position: absolute;
+     content: url(../images/lnr-checkmark-circle.svg);
+     width: 20px;
+     height: 15px;
+     margin-left: -30px;
+     /* margin-top: 2px; */
+}
 
 nav {
       font-family: 'Mulish', sans-serif;
@@ -116,6 +135,19 @@ button, input, select, textarea {
       -moz-box-sizing: border-box;
       box-sizing: border-box;
       margin: 0;
+}
+
+h2, h3 {
+     font-family: 'Cormorant Garamond', serif;
+     letter-spacing: 0.8px;
+}
+h2 {
+     font-weight: 300;
+     font-size: 2em;
+}
+h3 {
+     font-size: 1.5em;
+     font-weight: 500;
 }
 
 /* ···················································· */
@@ -204,7 +236,7 @@ button, input, select, textarea {
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.5;
+      opacity: 0.6;
  }
  #index-servicios .item:nth-child(1)::before {
      background: url('../images/servicio1-bkgr.jpg')no-repeat center center;
@@ -220,22 +252,37 @@ button, input, select, textarea {
  }
  #index-servicios .item h2, #index-servicios .item p {
       position: relative;
-      color: white;
- }
-
- /* INDEX:: index-about-us */
+      font-family: 'Cormorant Garamond', serif;
+}
+#index-servicios .item p {
+     color: white;
+}
+ #index-servicios h2 {
+      color: var(--dorado);
+}
+     
+/* INDEX:: index-about-us */
 #index-about-us {
      margin: 0 40px;
      display: grid;
-     grid-template: 400px 700px / 50% repeat(2, 1fr);
+     grid-template: auto minmax(700px, auto) / 50% repeat(2, 1fr);
      /* grid-template: 400px 650px / 50% repeat(2, minmax(250px, 1fr)); */
      grid-template-areas: "about about-foto about-foto"
-                          "pirela pirela-cont pirela-cont";
+     "pirela pirela-cont pirela-cont";
 }
 .about {
      grid-area: about;
      background-color: white;
-     padding: 0 13%;
+     padding: 15% 12%;
+     text-align: center;
+}
+.divisor {
+     background: url('../images/divisor.svg')no-repeat center center;
+     background-size: contain;
+     width: 65px;
+     height: 15px;
+     margin: 0 auto;
+     padding: 30px 0;
 }
 .about-foto {
      grid-area: about-foto;
@@ -251,17 +298,17 @@ button, input, select, textarea {
      grid-area: pirela-cont;
      color: white;
      background-color: var(--negro90);
-     padding: 0 13%;
+     padding: 15% 12%;
+}
+
+#index-about-us h2 {
+     color: var(--dorado);
 }
 
 #index-about-us div {
      display: grid;
      justify-content: center;
      align-content: center;
-}
-
-.item {
-     /* border: 1px solid green; */
 }
 
 /* INDEX:: index-servicios */
