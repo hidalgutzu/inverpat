@@ -19,6 +19,7 @@ body {
       background: #636363;
       font-size: 16px;
       height: 100%;
+      overflow-x: hidden;
 }
 
 :root {
@@ -49,15 +50,29 @@ body {
       color: black;
 }
 
-body {
-     overflow-x: hidden;
-}
-
 p {
      line-height: 1.4em;
      font-size: 0.9em;
      line-height: 1.6em;
  }
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none; /* for button */
+   -webkit-appearance: button; /* for input */
+     -moz-user-select: none;
+      -ms-user-select: none;
+}
  
  footer {
      text-align: center;
@@ -65,6 +80,14 @@ p {
      margin: 40px 20px;
      line-height: 2em;
  }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+     footer {
+          margin: 0 40px 40px;
+          float: left;
+     }
+}
+
  footer, footer a {
      color: var(--blanco50)
  }
@@ -164,6 +187,7 @@ h3 {
       height: 85vh;
       text-align: center;
       display: grid;
+      justify-content: center;
       align-content: center;
       position: relative;
       background: url('../images/inverpat-bkgr.jpg')no-repeat center center;
@@ -185,11 +209,23 @@ h3 {
      letter-spacing: 3px;
      line-height: 1em;
 }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+     #hero h1 {
+          font-size: 2.5em;
+     }
+}
 
 #hero .call-to-action {
      margin: 0 auto; 
      margin-top: 3%; 
      width: 100vw;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+     #hero .call-to-action {
+          padding: 0 50px;
+     }  
 }
 
 #hero small {
@@ -249,6 +285,20 @@ h3 {
       grid-template: 500px / repeat(3, 1fr);
       grid-gap: 40px;
  }
+     /* Extra small devices (tablets, 768px and down) */
+     @media only screen and (max-width: 768px) {
+          #index-servicios {
+               grid-template: repeat(3, 350px) / 1fr;
+          } 
+     }
+     /* Extra small devices (phones, 600px and down) */
+     @media only screen and (max-width: 600px) {
+          #index-servicios {
+               margin: 20px;
+               grid-gap: 20px;
+          }
+     }
+
  #index-servicios .item {
      position: relative;
      background-color: black;
@@ -282,7 +332,7 @@ h3 {
      background: url('../images/servicio3-bkgr.jpg')no-repeat center center;
      background-size: cover;
  }
- #index-servicios .item h2, #index-servicios .item p {
+ #index-servicios .item h2, #index-servicios .item p, #index-servicios .item button {
       position: relative;
       font-family: 'Cormorant Garamond', serif;
 }
@@ -292,16 +342,47 @@ h3 {
  #index-servicios h2 {
       color: var(--dorado);
 }
-     
+
+#index-servicios .item button {
+     margin: 0 auto;
+     background-color: var(--dorado);
+     cursor: pointer;
+     transition: var(--trans);
+     padding: 12px 17px;
+     margin-top: 20px;
+}
+#index-servicios .item button:hover  {
+     background-color: black;
+}
+#index-servicios .item a:hover {
+     color: white;
+}
+#index-servicios .item a {
+     text-decoration: none;
+     color: black;
+}
+
+
 /* INDEX:: index-about-us */
 #index-about-us {
      margin: 0 40px;
      display: grid;
      grid-template: auto minmax(700px, auto) / 50% repeat(2, 1fr);
-     /* grid-template: 400px 650px / 50% repeat(2, minmax(250px, 1fr)); */
      grid-template-areas: "about about-foto about-foto"
-     "pirela pirela-cont pirela-cont";
+                          "pirela pirela-cont pirela-cont";
 }
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 768px) {
+     #index-about-us {
+          margin: 0 20px;
+          grid-template: 1fr 250px 350px auto / 1fr;
+          grid-template-areas: "about" 
+                               "about-foto"
+                               "pirela"
+                               "pirela-cont";
+     } 
+}
+
 #index-about-us ul li::before {
      border-bottom: 1px solid white;
      position: absolute;
@@ -316,6 +397,12 @@ h3 {
      padding: 15% 12%;
      text-align: center;
 }
+     /* Extra small devices (phones, 600px and down) */
+     @media only screen and (max-width: 600px) {
+          .about {
+               padding: 12% 7%;
+          }
+     }
 .divisor {
      background: url('../images/divisor.svg')no-repeat center center;
      background-size: contain;
@@ -340,6 +427,13 @@ h3 {
      background-color: var(--negro90);
      padding: 15% 12%;
 }
+     /* Extra small devices (phones, 600px and down) */
+     @media only screen and (max-width: 600px) {
+          .pirela-cont {
+               padding: 12% 7%;
+          }
+     }
+
 .pirela-cont h2 span {
      font-size: 0.73em;
 }
@@ -359,7 +453,7 @@ h3 {
 }
 
 /* INDEX:: index-servicios */
-#index-noticias, #index-social {
+#index-social {
      margin: 0 40px;
      display: grid;
      width: auto;
@@ -368,10 +462,16 @@ h3 {
       align-content: center;
 }
 
-#index-noticias h2 {
+#index-noticias {
      text-align: center;
+     display: grid;
+     grid-gap: 20px 40px;
+     justify-content: center;
+     margin-top: 25px;
+}
+
+#index-noticias h2 {
      color: white;
-     margin-bottom: 30px;
 }
 
 #index-social {
@@ -379,86 +479,103 @@ h3 {
      background: url('../images/redes-sociales-inverpat.jpg')no-repeat center center;
      background-size: cover;
      background-attachment: fixed;
-}
-
-#index-social ul {
      display: flex;
-    flex-flow: row;
+     flex-flow: row;
+     justify-content: center;
+     align-items: center;
+}
+     /* Extra small devices (phones, 600px and down) */
+     @media only screen and (max-width: 600px) {
+          #index-social {
+               height: auto;
+               margin: 20px;
+               padding: 40px 0;
+               flex-flow: column;
+          }
+     }
+
+/* ------ */
+#index-social div {
+     width: 160px;
+     height: auto;
+     display: flex;
+     flex-flow: column;
+     justify-items: center;
+     text-align: center;
+     align-items: center;
 }
 
-#index-social ul li p {
-     color: var(--dorado);
-     position: absolute;
-    top: 100px;
-    left: 0;
-    right: 0;
-    font-size: 1.4em;
-    display: flex;
-    justify-content: center;
-}
-
-#index-social img {
-     width: 70px;
-     height: 70px;
-}
-
-#index-social ul li {
+#index-social .facebook, #index-social .instagram, #index-social .email {
+     width: 100px;
+     height: 100px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto;
      cursor: pointer;
      background-color: rgba(0,0,0,0);
      border-radius: 50%;
-     height: 100px;
-     width: 100px;
      transition: var(--trans);
-     display: inline-block;
-     padding: 20px;
-     margin: 0 30px;
-     position: relative;
-     
 }
-#index-social ul li:hover {
+#index-social .facebook:hover, #index-social .instagram:hover, #index-social .email:hover {
      background-color: var(--dorado);
      -webkit-box-shadow: -1px 27px 30px -15px rgba(0,0,0,0.46);
      -moz-box-shadow: -1px 27px 30px -15px rgba(0,0,0,0.46);
      box-shadow: -1px 27px 30px -15px rgba(0,0,0,0.46);
-}
+}      
 
-#index-social li a {
+#index-social div p {
+     color: var(--dorado);
+     display: block;
+     font-size: 1.4em;
+     height: auto;
+     width: 100%;
+     padding: 20px 0;
+}
+     /* Extra small devices (phones, 600px and down) */
+     @media only screen and (max-width: 600px) {
+          #index-social div p {
+               padding: 0 0 30px;
+          } 
+     }
+
+#index-social .icono {
+     top: 20px;
+     padding: 10px;
      width: 60px;
      height: 60px;
-     display: flex;
-    justify-self: center;
-    align-self: center;
 }
-
-#index-social li .facebook {
+#index-social .facebook .icono {
      background: url('../images/facebook.svg')no-repeat center center;
      background-size: contain;
 }
 
-#index-social li:hover .facebook {
+#index-social .facebook:hover .icono {
      background: url('../images/facebook-hover.svg')no-repeat center center;
      background-size: contain;
 }
 
-#index-social li .instagram {
+#index-social .instagram .icono {
      background: url('../images/instagram.svg')no-repeat center center;
      background-size: contain;
 }
 
-#index-social li:hover .instagram {
+#index-social .instagram:hover .icono {
      background: url('../images/instagram-hover.svg')no-repeat center center;
      background-size: contain;
 }
 
-#index-social li .email {
+#index-social .email .icono {
      background: url('../images/email.svg')no-repeat center center;
      background-size: contain;
 }
 
-#index-social li:hover .email {
+#index-social .email:hover .icono {
      background: url('../images/email-hover.svg')no-repeat center center;
      background-size: contain;
 }
+
+/* ------ */
 
 /* FOOTER */
 
