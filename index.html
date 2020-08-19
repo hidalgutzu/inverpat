@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 </head>
 <body class="container">
     <!-- Load Facebook SDK for JavaScript -->
@@ -63,7 +66,12 @@ logged_out_greeting="¡Hola!, soy tu asesor personal.">
             <small>Llevándote a construir un patrimonio maravilloso</small>
             <a href="#">
                 <!-- <button class="btn-primario fadeInUpDelay"></button> -->
-                <div class="play fadeInUpDelay"></div>
+                <div class="fadeInUpDelay playreel">
+                    <!-- <small>Play</small> -->
+                    <a data-fancybox href="https://www.youtube.com/watch?v=dTi625gdV0E" data-youtube-id="ze_ie8Ctp60" 
+                    class="video-banner js-trigger-video-modal"><span class="icon-play"></span></a>
+                <!-- <small>Reel</small> -->
+                </div>
             </a>
         </div>
         <div class="pleca-blanca"></div>
